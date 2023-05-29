@@ -11,15 +11,15 @@ function App() {
     <BrowserRouter>
     <div>
         <div className="header">
-            <div className='dhana'>
+            <div className='Saddala'>
                 <NavLink className={({isActive}) => isActive? 'active':''} to="/">Home</NavLink>
             </div>
             &nbsp;
-            <div className='sekhar'>
+            <div className='Reddy'>
                 <NavLink className={({isActive}) => isActive? 'active':''} to="/Employees">Employees</NavLink>
             </div>
             &nbsp;
-            <div className='reddy'>
+            <div className='Prasad'>
                 <NavLink className={({isActive}) => isActive? 'active':''} to="/create">Add</NavLink>
             </div>
         </div>
