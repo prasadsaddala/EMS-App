@@ -27,7 +27,7 @@ function Employees(){
                     <thead>
                         <tr>
                             <th>
-                                Id
+                                id
                             </th>
                             <th>
                                 Name
