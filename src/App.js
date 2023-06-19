@@ -12,6 +12,7 @@ import ViewEmployeeComponent from './components/ViewEmployeeComponent';
 function App() {
   return (
     <div>
+<<<<<<< HEAD
         <Router>
               <HeaderComponent />
                 <div className="container">
@@ -25,6 +26,29 @@ function App() {
                 </div>
               <FooterComponent />
         </Router>
+=======
+        <div className="header">
+            <div className='Saddala'>
+                <NavLink className={({isActive}) => isActive? 'active':''} to="/">Home</NavLink>
+            </div>
+            &nbsp;
+            <div className='Reddy'>
+                <NavLink className={({isActive}) => isActive? 'active':''} to="/Employees">Employees</NavLink>
+            </div>
+            &nbsp;
+            <div className='Prasad'>
+                <NavLink className={({isActive}) => isActive? 'active':''} to="/create">Add</NavLink>
+            </div>
+        </div>
+        <div className="content">
+            <Routes>
+                <Route path='/' element={<Home/>}/>
+                <Route path='/Employees' element={<Employees/>}/>
+                <Route path='/create' element={<Add/>}/>
+                <Route path='/edit' element={<Edit/>}/>
+            </Routes>
+        </div>
+>>>>>>> b619f9ee3cbb8b2639a70d84ab8c3ad0854c22cd
     </div>
     
   );
