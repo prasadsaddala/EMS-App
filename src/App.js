@@ -1,40 +1,33 @@
+import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import Employees from './components/Employees';
-import {BrowserRouter as BrowserRouter,Route, Routes}  from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
-import Add from './components/Add';
-import Edit from './components/Edit';
-import Home from './components/Home';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import ListEmployeeComponent from './components/ListEmployeeComponent';
+import HeaderComponent from './components/HeaderComponent';
+import FooterComponent from './components/FooterComponent';
+import CreateEmployeeComponent from './components/CreateEmployeeComponent';
+import UpdateEmployeeComponent from './components/UpdateEmployeeComponent';
+import ViewEmployeeComponent from './components/ViewEmployeeComponent';
 
 function App() {
-    return (
-    <BrowserRouter>
+  return (
     <div>
-        <div className="header">
-            <div className='dhana'>
-                <NavLink className={({isActive}) => isActive? 'active':''} to="/">Home</NavLink>
-            </div>
-            &nbsp;
-            <div className='sekhar'>
-                <NavLink className={({isActive}) => isActive? 'active':''} to="/Employees">Employees</NavLink>
-            </div>
-            &nbsp;
-            <div className='reddy'>
-                <NavLink className={({isActive}) => isActive? 'active':''} to="/create">Add</NavLink>
-            </div>
-        </div>
-        <div className="content">
-            <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/Employees' element={<Employees/>}/>
-                <Route path='/create' element={<Add/>}/>
-                <Route path='/edit' element={<Edit/>}/>
-            </Routes>
-        </div>
+        <Router>
+              <HeaderComponent />
+                <div className="container">
+                    <Routes> 
+                          <Route exact path = "/"  element= {<ListEmployeeComponent/>}></Route>
+                          <Route exact path = "/employees" element= {<ListEmployeeComponent/>}></Route>
+                          <Route exact path = "/add-employee/:id" element= {<CreateEmployeeComponent/>}></Route>
+                          <Route exact path = "/view-employee/:id" element = {<ViewEmployeeComponent />}></Route>
+                          {<Route path = "/update-employee/:id" component = {UpdateEmployeeComponent}></Route>}
+                    </Routes>
+                </div>
+              <FooterComponent />
+        </Router>
     </div>
-</BrowserRouter>
-);
-
+    
+  );
 }
 
 export default App;
